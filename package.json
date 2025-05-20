@@ -1,0 +1,12 @@
+{
+  "name": "aion_deepseekcoder",
+  "version": "1.0.0",
+  "description": "AION is a developer-grade VS Code extension that integrates **DeepSeek Coder V2** via **OpenRouter**. It provides:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
