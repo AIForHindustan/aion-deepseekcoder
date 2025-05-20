@@ -4,8 +4,13 @@
     {
       "type": "npm",
       "script": "compile",
-      "group": { "kind": "build", "isDefault": true },
-      "problemMatcher": ["$esbuild"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$esbuild"
+      ],
       "label": "npm: compile",
       "detail": "Run esbuild to compile the extension"
     },
@@ -14,7 +19,9 @@
       "script": "watch",
       "group": "build",
       "isBackground": true,
-      "problemMatcher": ["$esbuild"],
+      "problemMatcher": [
+        "$esbuild"
+      ],
       "label": "npm: watch",
       "detail": "Run esbuild in watch mode"
     }

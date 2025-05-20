@@ -1,12 +1,71 @@
 {
-  "name": "aion_deepseekcoder",
-  "version": "1.0.0",
-  "description": "AION is a developer-grade VS Code extension that integrates **DeepSeek Coder V2** via **OpenRouter**. It provides:",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "aion-deepseekcoder",
+  "displayName": "Aion Deepseek Coder",
+  "author": "Lokesh Gupta",
+  "description": "AI-driven code completion and analysis with Deepseek Coder",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:aion.askDeepseek",
+    "onCommand:aion.startChat",
+    "onView:aion.chatView"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aion.askDeepseek",
+        "title": "Ask Deepseek Coder"
+      },
+      {
+        "command": "aion.startChat",
+        "title": "Start Deepseek Chat"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "aion-explorer",
+          "title": "Aion Deepseek",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "aion-explorer": [
+        {
+          "id": "aion.chatView",
+          "name": "Deepseek Chat",
+          "media": "icon.png",
+          "type": "webview"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.mjs",
+    "watch": "node esbuild.mjs --watch",
+    "typecheck": "tsc --noEmit",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "vscode": "^1.100.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "esbuild": "^0.20.2",
+    "@types/vscode": "^1.100.0",
+    "@types/node": "^18.15.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "vsce": "^2.15.0"
+  }
 }
